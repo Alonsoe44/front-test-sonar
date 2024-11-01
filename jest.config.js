@@ -1,15 +1,17 @@
 module.exports = {
-  testEnvironment: "node", // Default to Node.js environment
+  testEnvironment: "node",
   moduleFileExtensions: ["js", "json", "ts"],
   transform: {
-    "^.+\\.ts$": "ts-jest", // Use ts-jest for TypeScript files
-    "^.+\\.js$": "babel-jest", // Use Babel for JavaScript files if needed
+    "^.+\\.ts$": "ts-jest",
+    "^.+\\.js$": "babel-jest",
   },
   testMatch: [
-    "<rootDir>/server/api/**/*.test.ts", // Match tests in server/api folder
-    "<rootDir>/components/**/*.spec.(js|ts)", // Match tests in components folder
+    "<rootDir>/server/api/**/*.test.ts",
+    "<rootDir>/components/**/*.spec.(js|ts)",
   ],
   moduleNameMapper: {
     "^@/(.*)$": "<rootDir>/$1",
   },
+  coverageDirectory: "coverage",
+  //collectCoverageFrom: ["/**/*.test.ts"],
 };
