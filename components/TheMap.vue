@@ -8,7 +8,7 @@ import "maplibre-gl/dist/maplibre-gl.css";
 import type { GeoEvent } from "~/interfaces/GeoEvent.js";
 
 const props = defineProps<{
-  events: GeoEvent;
+  events: GeoEvent[];
   colorBy: "env" | "carrier";
 }>();
 
@@ -31,7 +31,7 @@ onMounted(() => {
             type: "geojson",
             data: {
               type: "FeatureCollection",
-              features: [],
+              features: props.events as GeoEvent[],
             },
           },
           bbox: {
